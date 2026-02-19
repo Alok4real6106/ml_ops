@@ -23,8 +23,9 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         # Specifically looking for req.txt
+        pip install pylint
         if [ -f req.txt ]; then pip install -r req.txt; fi
 
     - name: Execute Model
       run: |
-        python mlops.py
+        pylint ml_ops.py
